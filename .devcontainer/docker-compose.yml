@@ -30,19 +30,6 @@ services:
 
     # Add "forwardPorts": ["5432"] to **devcontainer.json** to forward PostgreSQL locally.
     # (Adding the "ports" property to this file will not forward from a Codespace.)
-
-  worker:
-    build: 
-      context: .
-      dockerfile: Dockerfile
-    command: arq app.worker.WorkerSettings
-    env_file:
-      - ./src/.env
-    depends_on:
-      - db
-      - redis
-    volumes:
-      - ./src/app:/code/app
   
   s3:
     image: reduct/store:latest
@@ -52,14 +39,6 @@ services:
     volumes:
       - s3-data:/data
 
-  redis:
-    image: redis:alpine
-    volumes:
-      - redis-data:/data
-    expose:
-      - "6379"
-
-  
   qdrant:
     image: qdrant/qdrant:latest
     ports:
@@ -71,4 +50,3 @@ services:
 volumes:
   postgres-data:
   s3-data:
-  redis-data:

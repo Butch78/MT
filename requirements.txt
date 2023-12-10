@@ -15,4 +15,7 @@ qdrant-client
 reduct-py
 python-multipart
 arq
-python-multipart 
+redis
+ruff
+aiofiles
+pypdf2

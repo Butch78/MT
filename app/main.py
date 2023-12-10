@@ -13,8 +13,7 @@ app = FastAPI()
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     create_db_and_tables()
-    create_read_only_user()
-
+    # create_read_only_user()
     yield
 
 

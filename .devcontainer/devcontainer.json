@@ -4,12 +4,23 @@
 	"name": "MT",
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
-	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}""forwardPorts": [
-		5432
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"forwardPorts": [
+		5432,
+		8383,
+		6333
 	],
 	"portsAttributes": {
 		"5432": {
 			"label": "PostgreSQL port",
+			"onAutoForward": "silent"
+		},
+		"8383": {
+			"label": "Reduct Store",
+			"onAutoForward": "silent"
+		},
+		"6333": {
+			"label": "Qdrant",
 			"onAutoForward": "silent"
 		}
 	},
@@ -49,7 +60,7 @@
 						"source.fixAll": true
 					}
 				},
-				"python.formatting.provider": "black",
+				"python.formatting.provider": "Ruff",
 				"sqltools.connections": [
 					{
 						"name": "Local database",
