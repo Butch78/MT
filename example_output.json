@@ -1,0 +1,66 @@
+[
+    {
+        "question": "What is the title of the course?",
+        "answer": "Applied Financial Analytics for Strategic Decisions and Value Creation"
+    },
+    {
+        "question": "What is covered in the Faculty of Business, Economics and Informatics?",
+        "answer": "1. Data analytics process and Power BI\n2. All you need to know: Creating a dashboard in six steps (≈ 30 minutes)\n3. Sample exercise on how to build your own dashboard (≈ 1 hour)"
+    },
+    {
+        "question": "What are the steps involved in the data analytics process?",
+        "answer": "Collect and extract data, Load data to a dedicated server, Explore data, Clean data, Prepare and format data, Test different algorithms and combinations of data models, Create Insights"
+    },
+    {
+        "question": "What are the main choices on the market for Visualization Programs in the Faculty of Business, Economics and Informatics?",
+        "answer": "The 3 main choices on the market"
+    },
+    {
+        "question": "What is Power BI Pro?",
+        "answer": "Power BI Pro license allows you to create, share, and edit dashboards. Other users also need a pro version to view your dashboards online. Pricing is per user (≈ USD 10 per user and month)."
+    },
+    {
+        "question": "What is the first step in the dashboarding approach?",
+        "answer": "Importing datasets to Power BI"
+    },
+    {
+        "question": "What are the supported sources for loading data in Power BI?",
+        "answer": "CSV, Excel, SQL Server, SurveyMonkey, Forecast output (Python script)"
+    },
+    {
+        "question": "What is the purpose of unpivoting columns in data manipulation?",
+        "answer": "Unpivoting columns is useful for calculations to get data features in one column."
+    },
+    {
+        "question": "What are the steps to merge tables in Power BI?",
+        "answer": "Select the two tables that you want to merge, Merge based on matching columns, Power BI features six forms of joins: Left Outer (all from first, matching from second}, Right Outer (all from second, matching from first}, Full Outer (all rows from both}, Inner (only matching rows}, Left Anti (rows only in first}, Right Anti (rows only in second)"
+    },
+    {
+        "question": "What are the different views in the Desktop Environment?",
+        "answer": "Report View, Data View, Relationship View"
+    },
+    {
+        "question": "What language does the Main Interface of the Desktop Environment use?",
+        "answer": "DAX (Data Analysis Expressions) language"
+    },
+    {
+        "question": "What are the features of the Relationship Builder in the Faculty of Business, Economics and Informatics?",
+        "answer": "Graphic pull-and-drop interface, Interface is very similar to merge interface in the query, Relationships featured: Many to one, One to one, Many to many, Filters can be applied in one or both directions"
+    },
+    {
+        "question": "What is the time allocation for the Breakout Session?",
+        "answer": "≈ 1 hour"
+    },
+    {
+        "question": "Check if relationship between the tables Regions and Sales has been established",
+        "answer": "Check if there is a foreign key relationship between the Regions and Sales tables"
+    },
+    {
+        "question": "Add an option that resets all the filters",
+        "answer": "1. Show the Bookmarks Pane\n2. Add a new bookmark (while you haven't selected any filters) and give it a concise name\n3. Insert a button. Assign the bookmark to that button under Action in the Visualization Pane\n4. You can check if it worked by pressing ctrl and clicking on the button"
+    },
+    {
+        "question": "What are the visual guidelines for the Faculty of Business, Economics and Informatics?",
+        "answer": "Use colors and fonts consistently, align tables, matrixes, filters, etc., make sure all filters are deselected, ensure clear visual/axis titles and tooltips, create a navigation (index) page, work with deep dives if dashboard gets too packed (i.e. link hidden page, and follow visual standards."
+    }
+]
