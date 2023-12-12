@@ -1,8 +1,8 @@
-from pydantic import BaseModel, Field
-from sqlmodel import SQLModel
-
+from pydantic import BaseModel
+from sqlmodel import SQLModel, Field
 from typing import Optional
 
+from typing import Optional
 
 # Used primarily for Llamaindex for parsing PDf -> Card object
 class Card(BaseModel):
