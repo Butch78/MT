@@ -18,4 +18,4 @@ arq
 redis
 ruff
 aiofiles
-pypdf2
+pypdf

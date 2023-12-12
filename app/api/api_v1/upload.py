@@ -1,17 +1,9 @@
-from fastapi import APIRouter, File, UploadFile, Depends, BackgroundTasks
-from qdrant_client import QdrantClient
-from llama_index.vector_stores.qdrant import QdrantVectorStore
-from llama_index import SimpleDirectoryReader
-import aiofiles
+from fastapi import APIRouter, File, UploadFile, BackgroundTasks
+
 
 from app.services.index import LlamaIndex
-from app.utils.config import settings
-import os
 
 router = APIRouter()
-
-index_name = "./index.json"
-documents_folder = "./documents"
 
 
 @router.post(
@@ -25,9 +17,8 @@ async def file_upload(
     file: UploadFile = File(...),
 ):
     if file.filename:
+        # TODO move this to ARQ worker
         llama_index = LlamaIndex(user_id=user_id, file_name=file.filename)
-
         background_tasks.add_task(llama_index.upload_file, file)
-
 
     return {"message": "File uploaded successfully"}
