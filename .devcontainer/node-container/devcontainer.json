@@ -1,0 +1,21 @@
+{
+    "name": "Node Container",
+    "dockerComposeFile": [
+        "../../docker-compose.yml"
+    ],
+    "service": "node-app",
+    "shutdownAction": "none",
+    "workspaceFolder": "/workspace/node-src""customizations": {
+        // Configure properties specific to VS Code.
+        "vscode": {
+            // Add the IDs of extensions you want installed when the container is created.
+            "extensions": [
+                "GitHub.copilot",
+                "GitHub.copilot-chat",
+                "Vue.volar",
+                "Vue.vscode-typescript-vue-plugin"
+            ],
+            // Set *default* container specific settings.json values on container create.
+        }
+    },
+}
