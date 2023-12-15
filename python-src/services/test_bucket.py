@@ -1,47 +1,15 @@
-from http import client
 from pathlib import Path
 from time import time_ns
-
-import asyncio
 
 from reduct import Client, BucketSettings, QuotaType
 
 CURRENT_FILE = Path(__file__)
 
 
-class S3Service:
-    def __init__(self, user_id: str, file_name: str):
-        self.client = 
-        self.user_id = user_id
-        self.loop = asyncio.get_event_loop()
-        self.bucket_settings = BucketSettings(quota_type=QuotaType.FIFO, quota_size=1_000_000_000)
-        pass
-
-    async def create_bucket(self, bucket_name: str):
-
-        async with Client("http://localhost:8383") as client:
-            return await client.create_bucket(
-                bucket_name,
-                self.bucket_settings,
-                exist_ok=True,
-            )
-
-    async def write_data(self):
-        pass
-
-    async def upload_file(self):
-        pass
-
-    async def read_data(self):
-        pass
-
-    async def iterate_records(self):
-        pass
-
 async def main():
     # --8<-- [start:createclient]
     # Create a ReductStore client
-    async with Client("http://localhost:8383") as client:
+    async with Client("http://s3:8383") as client:
         # --8<-- [end:createclient]
 
         # --8<-- [start:createbucket]

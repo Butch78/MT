@@ -15,13 +15,13 @@ class CRUDBase(Generic[ModelType, CreateSchemaType, UpdateSchemaType]):
 
     def get(self, db: Session, id: Any) -> Optional[SQLModel]:
         try:
-            return db.query(self.model).filter(self.model.id == id).first()
+            return db.exec(self.model).filter(self.model.id == id).first()
         except Exception:
             print(f"{self.model.__name__} with the {id} id not found")
 
     def get_multi(self, db: Session, *, skip=0, limit=100) -> List[SQLModel]:
         try:
-            return db.query(self.model).offset(skip).limit(limit).all()
+            return db.exec(self.model).offset(skip).limit(limit).all()
         except Exception as e:
             print(f"{self.model.__name__} not found")
             print(e)
@@ -70,7 +70,7 @@ class CRUDBase(Generic[ModelType, CreateSchemaType, UpdateSchemaType]):
 
     def delete(self, db: Session, *, id: Any) -> Optional[SQLModel]:
         try:
-            db_obj = db.query(self.model).filter(self.model.id == id).first()
+            db_obj = db.exec(self.model).filter(self.model.id == id).first()
             if db_obj is None:
                 raise HTTPException(
                     status_code=404, detail=f"{self.model.__name__} not found"

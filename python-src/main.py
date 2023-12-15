@@ -3,9 +3,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 
 
-from app.utils.config import settings
-from app.utils.deps import create_db_and_tables, create_read_only_user
-from app.api.api import api_router
+from utils.config import settings
+from utils.deps import create_db_and_tables, create_read_only_user
+from api.api import api_router
 
 app = FastAPI()
 

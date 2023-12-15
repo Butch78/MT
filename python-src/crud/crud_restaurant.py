@@ -1,6 +1,6 @@
-from app.crud.crud_base import CRUDBase
+from crud.crud_base import CRUDBase
 
-from app.schema.restaurant import Restaurants, RestaurantsCreate, RestaurantsUpdate
+from schema.restaurant import Restaurants, RestaurantsCreate, RestaurantsUpdate
 
 
 class CRUDRestaurant(CRUDBase[Restaurants, RestaurantsCreate, RestaurantsUpdate]):

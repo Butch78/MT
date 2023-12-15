@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 from sqlmodel import SQLModel, Session, create_engine
 from sqlalchemy import text
 
-from app.utils.config import settings
+from utils.config import settings
 
 # Connect to the database
 load_dotenv(".env")
@@ -11,8 +11,8 @@ DBPASS = settings.DBPASS
 DBHOST = settings.DBHOST
 DBNAME = settings.DBNAME
 DATABASE_URI = f"postgresql://{DBUSER}:{DBPASS}@{DBHOST}/{DBNAME}"
-if DBHOST != "localhost":
-    DATABASE_URI += "?sslmode=require"
+# if DBHOST != "localhost":
+#     DATABASE_URI += "?sslmode=require"
 
 engine = create_engine(DATABASE_URI, echo=True)
 

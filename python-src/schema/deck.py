@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 
-from app.schema.card import Card
+from schema.card import Card
 
 
 class Deck(BaseModel):

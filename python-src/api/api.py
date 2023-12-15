@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 
-from app.api.api_v1.restaurants import router as restaurants_router
-from app.api.api_v1.upload import router as upload_router
+from api.api_v1.restaurants import router as restaurants_router
+from api.api_v1.upload import router as upload_router
 
 api_router = APIRouter()
 api_router.include_router(

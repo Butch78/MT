@@ -1,0 +1,28 @@
+{
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.typeCheckingMode": "basic",
+    "sqltools.connections": [
+        {
+            "name": "Azure database",
+            "driver": "PostgreSQL",
+            "server": "<HOSTNAME>.postgres.database.azure.com",
+            "port": 5432,
+            "database": "postgres",
+            "username": "<USERNAME>",
+            "askForPassword": true,
+            "pgOptions": {
+                "ssl": true
+            }
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "name": "Local database",
+            "driver": "PostgreSQL",
+            "database": "postgres",
+            "username": "postgres",
+            "password": "postgres"
+        }
+    ]
+}

@@ -1,13 +1,18 @@
 from typing import Sequence
-import qdrant_client
+
+import os
 import asyncio
 import aiofiles
 from fastapi import File, UploadFile
 from functools import partial
-import os
-from app.schema.card import Card
+import qdrant_client
 
-from app.utils.config import settings
+import crud
+from schema.card import Card, CardsCreate
+from utils.config import settings
+
+from sqlmodel import Session
+
 
 #  region:    --- LlamaIndex Modules
 
@@ -29,13 +34,12 @@ from llama_index.program import OpenAIPydanticProgram
 
 #  endregion: --- LlamaIndex Modules
 
-
 class LlamaIndex:
     def __init__(self, user_id: str, file_name: str):
         self.user_id = user_id
         self.loop = asyncio.get_event_loop()
 
-    async def upload_file(self, file: UploadFile = File(...)):
+    async def upload_file(self, db: Session,  file: UploadFile = File(...), ):
         """Handle a file upload, the file should have the user's ID in the filename."""
 
         # Create Temporary Directory and File to store the file
@@ -55,6 +59,7 @@ class LlamaIndex:
                     partial(
                         self.ingest_documents,
                         temp_path,
+                        db
                     ),
                 )
 
@@ -70,12 +75,12 @@ class LlamaIndex:
             vector_store=vector_store,
         )
 
-    def run_pipeline(self, pipeline: IngestionPipeline, documents: list[Document]):
+    def run_pipeline(self, db:Session,  pipeline: IngestionPipeline, documents: list[Document]):
         print("Running ingestion pipeline")
         nodes = pipeline.run(documents=documents)
-        self.query_document(nodes=nodes)
+        self.query_document(nodes=nodes, db =db)
 
-    def ingest_documents(self, file_path: str):
+    def ingest_documents(self, file_path: str, db: Session):
         reader = SimpleDirectoryReader(file_path)
         documents = reader.load_data()
 
@@ -83,11 +88,11 @@ class LlamaIndex:
         vector_store = QdrantVectorStore(client=client, collection_name=self.user_id)
 
         ingestion_pipeline = self.get_ingestion_pipeline(vector_store=vector_store)
-        self.run_pipeline(pipeline=ingestion_pipeline, documents=documents)
+        self.run_pipeline(pipeline=ingestion_pipeline, documents=documents, db =db)
         print("Ingestion complete")
         return VectorStoreIndex.from_vector_store(vector_store)
 
-    def query_document(self, nodes: Sequence[BaseNode]):
+    def query_document(self, nodes: Sequence[BaseNode], db: Session):
         print("Querying document")
         # Go through each node and get the content to pass to the LLM..
 
@@ -129,7 +134,9 @@ class LlamaIndex:
                 # try to pass the output to the Deck Pydantic Model
                 output = program(node_content=node_content)
                 try:
-                    cards.append(Card(**output.dict()))
+                    obj_in = CardsCreate(**output.dict())
+                    cards.append(obj_in)
+                    crud.cards.create(db=db, obj_in=obj_in)
                 except Exception as e:
                     print("Error: ", e)
             except Exception as e:
