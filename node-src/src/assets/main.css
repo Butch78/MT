@@ -1,0 +1,43 @@
+@import './base.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#app {
+  /* max-width: 75%; */
+  /* margin: 0 auto; */
+  /* only top padding */
+  /* padding: 1rem 0 0 0; */
+
+  /* font-weight: normal; */
+}
+
+
+/* @media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+} */
+
+html {
+		font-family: Urbanist, sans-serif;
+		scroll-behavior: smooth;
+	}
+
+	body {
+		margin: 0;
+	}
+
+/* @media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  } 
+} */

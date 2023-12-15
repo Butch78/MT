@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "user_id": 1,
+    "created_at": "2023-02-11 08:01:39.328502731 UTC",
+    "name": "Software Systems",
+    "description": "test",
+    "state": "test",
+    "cards": [
+      {
+        "id": 1,
+        "deck_id": 1,
+        "created_at": "2023-02-11 08:01:39.328468104 UTC",
+        "question": "What is a Google Server?",
+        "answer": "A Google Server is a commodity-class x86 PC server with custom Linux, running outdated hardware and with its own 12V battery to counter unstable power supplies. Each server rack holds 40 to 80 servers and is setup in standard shipping containers and wired together.",
+        "state": "inactive",
+        "fruit": "apple",
+        "interval" : 1,
+        "repetition" : 1,
+        "easiness" : 1,
+        "dueDate" : "2023-02-11 08:01:39.328468104 UTC"
+      },
+      {
+        "id": 2,
+        "deck_id": 1,
+        "created_at": "2023-02-11 08:01:39.328498540 UTC",
+        "question": "What is the purpose of a Google Server?",
+        "answer": "The purpose of a Google Server is to provide a distributed database system for a globe-spanning web application.",
+        "state": "inactive",
+        "fruit": "banana",
+        "interval" : 1,
+        "repetition" : 1,
+        "easiness" : 1,
+        "dueDate" : "2023-02-11 08:01:39.328468104 UTC"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "user_id": 1,
+    "created_at": "2023-02-11 08:01:39.328507977 UTC",
+    "name": "FSS01_02_TowardsScalableNoSQL",
+    "description": "test",
+    "state": "test",
+    "cards": [
+      {
+        "id": 3,
+        "deck_id": 2,
+        "created_at": "2023-02-11 08:01:39.328468104 UTC",
+        "question": "What is a Google Server?",
+        "answer": "A Google Server is a commodity-class x86 PC server with custom Linux, running outdated hardware and with its own 12V battery to counter unstable power supplies. Each server rack holds 40 to 80 servers and is setup in standard shipping containers and wired together.",
+        "state": "inactive",
+        "fruit": "grape",
+        "interval" : 1,
+        "repetition" : 1,
+        "easiness" : 1,
+        "dueDate" : "2023-02-11 08:01:39.328468104 UTC"
+      },
+      {
+        "id": 4,
+        "deck_id": 2,
+        "created_at": "2023-02-11 08:01:39.328498540 UTC",
+        "question": "What is the purpose of a Google Server?",
+        "answer": "The purpose of a Google Server is to provide a distributed database system for a globe-spanning web application.",
+        "state": "inactive",
+        "fruit": "orange",
+        "interval" : 1,
+        "repetition" : 1,
+        "easiness" : 1,
+        "dueDate" : "2023-02-11 08:01:39.328468104 UTC"
+      }
+    ]
+  }
+]
