@@ -1,11 +1,12 @@
 {
-    "name": "Python Container",
+    "name": "python-api",
     "dockerComposeFile": [
         "../../docker-compose.yml"
     ],
     "service": "python-api",
     "shutdownAction": "none",
-    "workspaceFolder": "/workspace/python-src"
+    "postCreateCommand": "pip install -r requirements.txt",
+    "workspaceFolder": "/workspace/python-src",
     "customizations": {
         // Configure properties specific to VS Code.
         "vscode": {
