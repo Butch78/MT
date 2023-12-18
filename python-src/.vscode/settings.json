@@ -16,7 +16,7 @@
         },
         {
             "previewLimit": 50,
-            "server": "localhost",
+            "server": "db",
             "port": 5432,
             "name": "Local database",
             "driver": "PostgreSQL",
@@ -24,5 +24,25 @@
             "username": "postgres",
             "password": "postgres"
         }
-    ]
+    ],
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#d1f3ef",
+        "activityBar.background": "#d1f3ef",
+        "activityBar.foreground": "#15202b",
+        "activityBar.inactiveForeground": "#15202b99",
+        "activityBarBadge.background": "#d381de",
+        "activityBarBadge.foreground": "#15202b",
+        "commandCenter.border": "#15202b99",
+        "sash.hoverBorder": "#d1f3ef",
+        "statusBar.background": "#a9e8e1",
+        "statusBar.foreground": "#15202b",
+        "statusBarItem.hoverBackground": "#81ddd3",
+        "statusBarItem.remoteBackground": "#a9e8e1",
+        "statusBarItem.remoteForeground": "#15202b",
+        "titleBar.activeBackground": "#a9e8e1",
+        "titleBar.activeForeground": "#15202b",
+        "titleBar.inactiveBackground": "#a9e8e199",
+        "titleBar.inactiveForeground": "#15202b99"
+    },
+    "peacock.remoteColor": "#a9e8e1"
 }

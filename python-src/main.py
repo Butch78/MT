@@ -21,7 +21,7 @@ app = FastAPI(title=settings.PROJECT_NAME, lifespan=lifespan)
 app.include_router(api_router)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[str(origin) for origin in settings.BACKEND_CORS_ORIGINS],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -31,3 +31,5 @@ app.add_middleware(
 @app.get("/")
 def root():
     return "Welcome to the FastAPI and Postgres in a dev container demonstration. Add /docs to the URL to see API methods."
+
+
